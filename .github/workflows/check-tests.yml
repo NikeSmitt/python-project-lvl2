@@ -7,9 +7,10 @@ coverage:
   steps:
     - uses: actions/checkout@master
     - uses: actions/setup-python@v2
-    - run: pip install poetry
-    - run: make install
-      - uses: paambaati/codeclimate-action@v2.7.5
+    - run: |
+           pip install poetry
+           make install
+    - uses: paambaati/codeclimate-action@v2.7.5
         env: 
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPORTER_ID }}
         with:
