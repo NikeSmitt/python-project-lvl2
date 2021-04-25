@@ -1,16 +1,15 @@
 name: check-tests
 on: [push]
-coverage:
-  needs: [ check ]
-  name: coverage
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-python@v2
-    - run: |
+jobs:
+  coverage:
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: |
            pip install poetry
            make install
-    - uses: paambaati/codeclimate-action@v2.7.5
+      - uses: paambaati/codeclimate-action@v2.7.5
         env: 
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPORTER_ID }}
         with:
