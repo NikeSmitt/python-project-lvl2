@@ -2,7 +2,7 @@ name: flake8-check
 on: [push]
 jobs:
   check:
-    rins-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: pip install poetry
