@@ -1,6 +1,5 @@
 from gendiff.scripts.gendiff import generate_diff
 
-
 PLUS = "  + "
 MINUS = "  - "
 EMPTY = "    "
@@ -38,6 +37,7 @@ def test_total_different_files():
               "}"
               ]
     assert "\n".join(OUTPUT) == generate_diff(FILE1, FILE2)
+
 
 def test_different_files_with_same_keys():
     FILE1 = 'gendiff/tests/fixtures/file_2.json'
