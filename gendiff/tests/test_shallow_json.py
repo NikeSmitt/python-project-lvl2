@@ -52,4 +52,4 @@ def test_different_files_with_same_keys():
               "}"
               ]
     assert "\n".join(OUTPUT) == generate_diff(FILE1, FILE2)
-    
+
