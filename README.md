@@ -2,4 +2,4 @@
 [![Actions Status](https://github.com/NikeSmitt/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/NikeSmitt/python-project-lvl2/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fc4037bea991c6bff8e4/maintainability)](https://codeclimate.com/github/NikeSmitt/python-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fc4037bea991c6bff8e4/test_coverage)](https://codeclimate.com/github/NikeSmitt/python-project-lvl2/test_coverage)
-[![asciicast](https://asciinema.org/a/5qAdG3HWjs7N5F9e6B2ZW2BZa.svg)](https://asciinema.org/a/5qAdG3HWjs7N5F9e6B2ZW2BZa)
+[![asciicast](https://asciinema.org/a/ThnkYZeVE8JIljCA97rZDBvfQ.svg)](https://asciinema.org/a/ThnkYZeVE8JIljCA97rZDBvfQ)

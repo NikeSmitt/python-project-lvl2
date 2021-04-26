@@ -1,19 +1,20 @@
 from gendiff.scripts.generate_diff import generate_diff
 
+
 PLUS = "  + "
 MINUS = "  - "
 EMPTY = "    "
 
 
 def test_empty_files():
-    FILE1 = 'gendiff/tests/fixtures/empty_1.json'
-    FILE2 = 'gendiff/tests/fixtures/empty_2.json'
+    FILE1 = 'gendiff/tests/fixtures/empty.yaml'
+    FILE2 = 'gendiff/tests/fixtures/empty.yaml'
 
     assert generate_diff(FILE1, FILE2) == ''
 
 
 def test_same_files():
-    FILE = 'gendiff/tests/fixtures/file_1.json'
+    FILE = 'gendiff/tests/fixtures/file_1.yaml'
     OUTPUT = """{
     follow: False
     host: hexlet.io
@@ -25,8 +26,8 @@ def test_same_files():
 
 
 def test_total_different_files():
-    FILE1 = 'gendiff/tests/fixtures/file_1.json'
-    FILE2 = 'gendiff/tests/fixtures/file_2.json'
+    FILE1 = 'gendiff/tests/fixtures/file_1.yaml'
+    FILE2 = 'gendiff/tests/fixtures/file_2.yml'
     OUTPUT = ["{",
               f"{PLUS}Abbrev: ISO 8879:1986",
               f"{PLUS}Acronym: SGML",
@@ -40,8 +41,8 @@ def test_total_different_files():
 
 
 def test_different_files_with_same_keys():
-    FILE1 = 'gendiff/tests/fixtures/file_2.json'
-    FILE2 = 'gendiff/tests/fixtures/file_3.json'
+    FILE1 = 'gendiff/tests/fixtures/file_2.yml'
+    FILE2 = 'gendiff/tests/fixtures/file_3.yml'
 
     OUTPUT = ["{",
               f"{MINUS}Abbrev: ISO 8879:1986",
@@ -52,4 +53,3 @@ def test_different_files_with_same_keys():
               "}"
               ]
     assert "\n".join(OUTPUT) == generate_diff(FILE1, FILE2)
-

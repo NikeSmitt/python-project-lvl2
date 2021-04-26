@@ -1,28 +1,6 @@
 #!/usr/bin/env python3
+from gendiff.scripts.generate_diff import generate_diff
 import argparse
-import json
-
-
-def generate_diff(file_path1, file_path2):
-    with open(file_path1) as f1:
-        json_1 = json.load(f1)
-    with open(file_path2) as f2:
-        json_2 = json.load(f2)
-
-    keys_arr = sorted(set(json_1) | set(json_2))
-    differences = []
-    for key in keys_arr:
-        value_1 = json_1.get(key)
-        value_2 = json_2.get(key)
-        if value_1 == value_2:
-            differences.append(f"    {key}: {value_1}")
-        else:
-            if value_1 is not None:
-                differences.append(f"  - {key}: {value_1}")
-            if value_2 is not None:
-                differences.append(f"  + {key}: {value_2}")
-    output = '\n'.join(differences)
-    return f'{{\n{output}\n}}' if len(differences) else ""
 
 
 def main():
